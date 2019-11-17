@@ -1,0 +1,33 @@
+.main_chat
+  .main_header
+    .main
+      .main__groupname
+        SwordShield
+      .main__member
+        Member:
+    .edit
+      Edit
+
+  .chat
+    .chatdate
+      .chatdate__name
+        %b やまおとこ
+      .chatdate__time
+        2019/11/18 23:12
+    .chat__message
+      メタモンは逆鱗の滝だよ
+    .chatdate
+      .chatdate__name
+        %b 短パン小僧
+      .chatdate__time
+        2019/11/19 10:54
+    .chat__message
+      ありがとう
+  .form
+    %section.message#message
+      %form.message-form
+        %input.login-input-text{type: "text", placeholder: "type a message"}
+          %label.input-box__image
+            = icon('fas', 'image')
+            %input{type: "file", style: "display:none;"}
+        %input.login-input-send{type: "submit", value: "Send"}
