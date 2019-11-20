@@ -1,11 +1,12 @@
 .side_bar
   .header
-    .header__name
+    %h3.header__name
+      = current_user.name
       %b aaaaaa
     .header__icon
-      =link_to '#' do
+      = link_to '#' do
         = icon('fas', 'edit')
-      =link_to '#' do
+      = link_to edit_user_path(current_user) do
         = icon('fas', 'cog')
 
   .contents
