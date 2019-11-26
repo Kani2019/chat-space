@@ -4,19 +4,19 @@
       .main__groupname
         = @group.name
       .main__member
-        Member:
+        Member: 
+        = User.pluck(:name) #groupにいるユーザーの名前をだす（配列担っているので、配列を処理するメソッドを使う→ plack or ids）
+
     .edit
       Edit
 
-  .messages
-    = render partial: 'message', collection: @messages
-
+  .chat
+    = render @messages
   .form
-    %section.message#message
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = icon('fas', 'image', class: 'icon')
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type  message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden', style: 'display:none'
+      = f.submit 'Send', class: 'form__submit'
