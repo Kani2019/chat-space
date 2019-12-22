@@ -78,9 +78,9 @@ $(function(){
           var insertHTML = '';
           $.each(messages, function(i, message) {
             insertHTML += buildHTML (message)
-            $('.chat').append(insertHTML);
-            $('.chat').animate({ scrollTop: $('.chat')[0].scrollHeight});
           })
+          $('.chat').append(insertHTML);
+          $('.chat').animate({ scrollTop: $('.chat')[0].scrollHeight});
         })
         .fail(function(messages) {
           alert("更新に失敗しました");
